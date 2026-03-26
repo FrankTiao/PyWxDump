@@ -6,6 +6,14 @@ on:
     tags:
       - 'v*'  # 以 'v' 开头的标签触发工作流程
 
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: '手动触发的原因（可选）'
+        required: false
+        default: 'Manual publish'
+
 jobs:
   publish:
     name: Publish Pypi and Create Release
